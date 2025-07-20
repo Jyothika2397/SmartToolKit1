@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GPA Calculator</title>
+  <style>
+    body { text-align: center; padding: 20px; font-family: sans-serif; }
+    input { margin: 5px; padding: 8px; }
+  </style>
+</head>
+<body>
+  <h2>📊 GPA Calculator</h2>
+  <p>Enter 3 subjects (for example):</p>
+
+  <input type="number" id="grade1" placeholder="Grade Point 1"><br>
+  <input type="number" id="grade2" placeholder="Grade Point 2"><br>
+  <input type="number" id="grade3" placeholder="Grade Point 3"><br><br>
+
+  <button onclick="calculateGPA()">Calculate GPA</button>
+  <h3 id="result"></h3>
+
+  <script>
+    function calculateGPA() {
+      let g1 = parseFloat(document.getElementById('grade1').value);
+      let g2 = parseFloat(document.getElementById('grade2').value);
+      let g3 = parseFloat(document.getElementById('grade3').value);
+      let gpa = (g1 + g2 + g3) / 3;
+      document.getElementById('result').innerText = "Your GPA is: " + gpa.toFixed(2);
+    }
+  </script>
+</body>
+</html>
