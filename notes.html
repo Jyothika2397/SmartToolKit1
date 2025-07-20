@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notes Manager</title>
+  <style>
+    body { text-align: center; font-family: sans-serif; padding: 20px; }
+    textarea { width: 80%; height: 100px; margin: 10px; }
+  </style>
+</head>
+<body>
+  <h2>📝 Notes Manager</h2>
+  <textarea id="note" placeholder="Write your note here..."></textarea><br>
+  <button onclick="saveNote()">Save Note</button>
+  <button onclick="loadNote()">Load Note</button>
+  <p id="savedNote"></p>
+
+  <script>
+    function saveNote() {
+      let note = document.getElementById('note').value;
+      localStorage.setItem('mynote', note);
+      alert("Note saved!");
+    }
+    function loadNote() {
+      let saved = localStorage.getItem('mynote');
+      document.getElementById('savedNote').innerText = saved;
+    }
+  </script>
+</body>
+</html>
